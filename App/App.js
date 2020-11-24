@@ -8,6 +8,7 @@ import { Icon } from 'react-native-elements'
 // Screens
 import RegisterScreen from './src/screens/RegisterScreen'
 import LoginScreen from './src/screens/LoginScreen'
+import RootTabs from './src/tabs/RootTabs'
 
 export const App = () => {
 	const Stack = createStackNavigator()
@@ -17,6 +18,7 @@ export const App = () => {
 			<Stack.Navigator initialRouteName={'register'} screenOptions={{ headerShown: false }} >
 				<Stack.Screen name={'register'} component={RegisterScreen} />
 				<Stack.Screen name={'login'} component={LoginScreen}  />
+				<Stack.Screen name={'root-tabs'} component={RootTabs} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	</View>

@@ -34,7 +34,7 @@ export const LoginScreen = ({ navigation }) => {
                         Dont't have an account? <Text style={{ color: Colors.grey[900] }} onPress={() => navigation.goBack()}>Register</Text>
                     </Text>
 
-                    <Forms.SubmitButton title={'Sign in'} color={Colors.grey[900]} textColor={'white'} />
+                    <Forms.SubmitButton title={'Sign in'} color={Colors.grey[900]} textColor={'white'} onPress={() => navigation.navigate('root-tabs')} />
                 </View>
             </View>
         </SafeAreaView>
