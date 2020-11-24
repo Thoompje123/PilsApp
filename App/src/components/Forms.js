@@ -4,7 +4,13 @@ import { StyleSheet, View, TextInput, TouchableWithoutFeedback, Text } from 'rea
 // Components
 import Colors from '../components/Colors'
 
-export const InputText = ({ style, placeholder, keyboardType = 'default', secureTextEntry}) => {
+export const FormGroup = ({children}) => {
+    return <View style={{marginVertical: 32}}>
+        {children}
+    </View>
+}
+
+export const InputText = ({ style, label, placeholder, keyboardType = 'default', secureTextEntry}) => {
 
     const styles = StyleSheet.create({
         input: {
@@ -13,15 +19,24 @@ export const InputText = ({ style, placeholder, keyboardType = 'default', secure
             borderRadius: 16,
             color: Colors.grey[800],
             fontSize: 20,
-            padding: 18
+            padding: 16
+        },
+        label: {
+            fontSize: 20,
+            marginBottom: 16,
+            color: Colors.grey[900]
         }
     })
     return <View>
+        {
+            label &&
+            <Text style={styles.label}>{label}</Text>
+        }
         <TextInput style={[styles.input, style]} placeholder={placeholder} keyboardType={keyboardType} secureTextEntry={secureTextEntry} />
     </View>
 }
 
-export const SubmitButton = ({ label, color, textColor }) => {
+export const SubmitButton = ({ style, title, color, textColor }) => {
 
     const styles = StyleSheet.create({
         container: {
@@ -40,9 +55,9 @@ export const SubmitButton = ({ label, color, textColor }) => {
     })
 
     return <TouchableWithoutFeedback>
-        <View style={styles.container}>
+        <View style={[styles.container, style]}>
             <View style={styles.body}>
-                <Text style={styles.text}>{label}</Text>
+                <Text style={styles.text}>{title}</Text>
             </View>
         </View>
     </TouchableWithoutFeedback>
