@@ -1,13 +1,14 @@
 import React from 'react'
-import { SafeAreaView, Text, View, StyleSheet, TextInput } from 'react-native'
+import { SafeAreaView, Text, View, StyleSheet, TextInput, StatusBar } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 
 // Components
 import * as Forms from '../components/Forms'
 import Colors from '../components/Colors'
 
-export const RegisterScreen = () => {
+export const RegisterScreen = ({ navigation }) => {
     return <LinearGradient style={{ flex: 1 }} colors={[Colors.grey[50], Colors.grey[300]]} end={[1, 1]} start={[0, 0]}>
+        <StatusBar barStyle={'dark-content'} />
         <SafeAreaView style={styles.container}>
             <View style={styles.body}>
                 <View style={{ flex: 1.5, justifyContent: 'center' }}>
@@ -31,7 +32,7 @@ export const RegisterScreen = () => {
                                 <Forms.SubmitButton style={{}} title={'Register'} color={Colors.grey[900]} textColor={'white'} />
                             </View>
                             <View style={{ flex: 1 }}>
-                                <Forms.SubmitButton title={'Login'} />
+                                <Forms.SubmitButton title={'Login'} onPress={() => navigation.navigate('login')} />
                             </View>
                         </View>
                     </LinearGradient>

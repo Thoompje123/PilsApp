@@ -36,7 +36,7 @@ export const InputText = ({ style, label, placeholder, keyboardType = 'default',
     </View>
 }
 
-export const SubmitButton = ({ style, title, color, textColor }) => {
+export const SubmitButton = ({ style, title, color, textColor, onPress = () => {} }) => {
 
     const styles = StyleSheet.create({
         container: {
@@ -54,7 +54,7 @@ export const SubmitButton = ({ style, title, color, textColor }) => {
         }
     })
 
-    return <TouchableWithoutFeedback>
+    return <TouchableWithoutFeedback onPress={() => onPress()}>
         <View style={[styles.container, style]}>
             <View style={styles.body}>
                 <Text style={styles.text}>{title}</Text>
