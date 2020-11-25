@@ -5,6 +5,7 @@ import { LinearGradient } from 'expo-linear-gradient'
 // Components
 import * as Forms from '../components/Forms'
 import Colors from '../components/Colors'
+import * as Texts from '../components/Texts'
 
 export const RegisterScreen = ({ navigation }) => {
     return <LinearGradient style={{ flex: 1 }} colors={[Colors.grey[50], Colors.grey[300]]} end={[1, 1]} start={[0, 0]}>
@@ -12,9 +13,9 @@ export const RegisterScreen = ({ navigation }) => {
         <SafeAreaView style={styles.container}>
             <View style={styles.body}>
                 <View style={{ flex: 1.5, justifyContent: 'center' }}>
-                    <Text style={styles.title}>Create an account</Text>
+                    <Texts.Title style={{ marginBottom: 16 }}>Create an account</Texts.Title>
 
-                    <Text style={styles.desciption}>It's your first time here.</Text>
+                    <Texts.Description>It's your first time here.</Texts.Description>
                 </View>
 
                 <View style={{ flex: 0.5, justifyContent: 'center' }}>
@@ -50,25 +51,6 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'space-between',
         paddingHorizontal: 32
-    },
-    headerText: {
-        marginTop: 100,
-        marginBottom: 100
-    },
-    title: {
-        color: Colors.grey[900],
-        fontWeight: '600',
-        fontSize: 38,
-        marginBottom: 16
-    },
-    desciption: {
-        color: Colors.grey[900],
-        fontWeight: '300',
-        fontSize: 34,
-        marginBottom: 12
-    },
-    footer: {
-
     }
 })
 

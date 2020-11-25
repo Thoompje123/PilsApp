@@ -2,11 +2,12 @@ import React from 'react'
 import { SafeAreaView, Text, View, StyleSheet, TextInput } from 'react-native'
 import { Icon } from 'react-native-elements'
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler'
+import { LinearGradient } from 'expo-linear-gradient'
 
 // Components
 import * as Forms from '../components/Forms'
 import Colors from '../components/Colors'
-import { LinearGradient } from 'expo-linear-gradient'
+import * as Texts from '../components/Texts'
 
 export const LoginScreen = ({ navigation }) => {
     return <LinearGradient style={{ flex: 1 }} colors={[Colors.grey[50], Colors.grey[300]]} end={[1, 0]} start={[0, 1]}>
@@ -18,9 +19,9 @@ export const LoginScreen = ({ navigation }) => {
                     </TouchableWithoutFeedback>
                 </View>
                 <View style={{ flex: 1, justifyContent: 'center' }}>
-                    <Text style={styles.title}>Let's sign you in.</Text>
+                    <Texts.Title style={{marginBottom: 16}}>Let's sign you in</Texts.Title>
 
-                    <Text style={styles.desciption}>Welcome back. {`\n`}You've been missed!</Text>
+                    <Texts.Description>Welcom back. {'\n'}You've been missed!</Texts.Description>
                 </View>
 
                 <View style={{ flex: 1, justifyContent: 'center' }}>

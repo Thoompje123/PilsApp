@@ -15,7 +15,7 @@ export const App = () => {
 
 	return <View style={{ flex: 1 }}>
 		<NavigationContainer>
-			<Stack.Navigator initialRouteName={'register'} screenOptions={{ headerShown: false }} >
+			<Stack.Navigator initialRouteName={'root-tabs'} screenOptions={{ headerShown: false }} >
 				<Stack.Screen name={'register'} component={RegisterScreen} />
 				<Stack.Screen name={'login'} component={LoginScreen}  />
 				<Stack.Screen name={'root-tabs'} component={RootTabs} />
